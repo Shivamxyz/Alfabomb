@@ -1,5 +1,4 @@
 import sys
-import telebot
 import requests
 import os
 import json
