@@ -111,7 +111,7 @@ def sp(message):
         response9 = requests.get(url10, params=params)
         response10 = requests.get(url11, params=params)
         response11 = requests.get(url12, params=params)
-        response12 = requests.get(url1, params=params)
+        response12 = requests.get(url, params=params)
         response13 = requests.get(url2, params=params)
         response14 = requests.get(url3, params=params)
         response15 = requests.get(url4, params=params)
