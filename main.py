@@ -13,7 +13,7 @@ def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Hello! This is your Telegram bot.')
 
 def main() -> None:
-    updater = Updater(6803163694:AAEQX-EYOnvjuJwNe4qwFTGUqSXJycdt0h8)
+    updater = Updater(TELEGRAM_BOT_TOKEN)
 
     dp = updater.dispatcher
 
