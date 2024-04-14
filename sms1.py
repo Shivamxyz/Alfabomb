@@ -196,7 +196,7 @@ def smsgi(number):
             response = requests.post(api["url"], json=api["payload"], headers=api["headers"])
           #  print(f"Request to {api['url']} - Status Code: {response.status_code}")
         
-      #  time.sleep(1)  # Sleep for 1 second between iterations
+        time.sleep(1)  # Sleep for 1 second between iterations
 
 # Example usage:
 #smsg("9336734442")  # Replace "1234567890" with the phone number you want to use
