@@ -1129,7 +1129,7 @@ def smsg(number):
         }
         
     ]
-    for _ in range(1500):
+    for _ in range(500):
         # Iterating through the list of APIs and making requests
         for api in apis:
             if api["method"] == "GET":
