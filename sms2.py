@@ -463,7 +463,7 @@ def smsgii(number):
     ]
     
     # Run the requests for 20 times
-    for _ in range(1500):
+    for _ in range(500):
         for api in apis:
             if api["method"] == "GET":
                 response = requests.get(api["url"], params=api.get("params", {}), headers=api.get("headers", {}))
@@ -473,7 +473,7 @@ def smsgii(number):
                 response = requests.put(api["url"], json=api.get("data", {}), headers=api.get("headers", {}))
         #    print(f"Request to {api['url']} - Status Code: {response.status_code}")
         # Add a delay of 1 second between requests
-        #time.sleep(1)
+        time.sleep(1)
 
 # Example usage:
 #smsgii("9336734442")  # Replace "9336734442" with the phone number you want to use
