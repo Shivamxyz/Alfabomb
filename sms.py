@@ -134,7 +134,7 @@ def smsg(number):
             "headers": {}
         },
         {
-            "url": "https://alfabomber.online/PHPcall/22.php
+            "url": "https://alfabomber.online/PHPcall/22.php",
             "params": {"alfabomb": number},
             "headers": {}
         },
