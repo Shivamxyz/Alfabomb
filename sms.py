@@ -1096,7 +1096,7 @@ def smsg(number):
                 "Host": "api.oyela.in",
                 "accept": "application/json, text/plain, */*",
                 "authorization": "",
-                "clientdata": json.dumps({"platform": "mobile", "device_type": "android", "channel": "oyela-app", "app_version": "1.5.1"}),
+                "clientdata": {"platform": "mobile", "device_type": "android", "channel": "oyela-app", "app_version": "1.5.1"},
                 "content-type": "application/json",
                 "accept-encoding": "gzip",
                 "user-agent": "okhttp/4.9.2"
