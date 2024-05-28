@@ -1911,4 +1911,4 @@ def smsg(number):
         time.sleep(1)
 
 # Example usage:
-smsgii("9336734442")  # Replace "9336734442" with the phone number you want to use
+#smsgii("9336734442")  # Replace "9336734442" with the phone number you want to use
