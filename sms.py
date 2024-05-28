@@ -1,7 +1,7 @@
 import requests
 import time
 
-def smsgii(number):
+def smsg(number):
     number = str(number)
     
     # List of APIs with their corresponding URLs, headers, and payloads
