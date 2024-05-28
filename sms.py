@@ -1842,10 +1842,10 @@ def smsg(number):
                 "Accept-Encoding": "gzip",
                 "Content-Length": "41"
             },
-            "data": json.dumps({
+            "data": {
                 "isExist": False,
                 "MobileNo": number
-            })
+            }
         },
         {
             "method": "POST",
@@ -1886,10 +1886,10 @@ def smsg(number):
                 "Accept-Encoding": "gzip",
                 "Content-Length": "41"
             },
-            "data": json.dumps({
+            "data": {
                 "isExist": False,
                 "MobileNo": number
-            })
+            }
         },
 
 
